@@ -10,8 +10,6 @@
 # car != rac 
 # bus = sub 
 
-#take input
-
 #prompt user to input string
 def input_string():
     original_string = input("Enter a word: ")
