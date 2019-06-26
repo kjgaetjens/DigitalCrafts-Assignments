@@ -19,9 +19,7 @@ def determine_is_prime(number):
         return True
     else:
         for divisor in divisors:
-            if number % divisor != 0:
-                continue
-            else:
+            if number % divisor == 0:
                 return False
         return True
 
