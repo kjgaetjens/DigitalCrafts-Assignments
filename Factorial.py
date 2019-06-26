@@ -2,13 +2,13 @@
 
 #prompt user to input number until user inputs positive whole number or quits
 def input_num():
-    number = input("Enter a positive whole number: ")
-    while number.isdigit() != True:
-        number = input("You did not enter a positive whole number. Please enter a positive whole number (eg. 2, 16, etc) or press 'q' to quit: ")
-        if number == "q":
+    num = input("Enter a positive integer: ")
+    while num.isdigit() != True:
+        num = input("You did not enter a integer. Please enter a positive integer (eg. 2, 16, etc) or press 'q' to quit: ")
+        if num == "q":
             exit()
-    number = int(number)
-    return number
+    num = int(num)
+    return num
 
 #calculate factorial
 def calc_factorial(number):
@@ -23,5 +23,6 @@ def display_factorial(factorial):
     print(factorial)
 
 #execute functions
-factorial = calc_factorial(input_num())
+number = input_num()
+factorial = calc_factorial(number)
 display_factorial(factorial)
