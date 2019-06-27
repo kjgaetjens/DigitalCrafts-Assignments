@@ -1,7 +1,7 @@
 #Assignment 3: Take input from the user and find out if that number is prime or not.
 
 #divisors to test number against
-divisors = [2, 3, 4, 5, 6, 7, 8, 9]
+divisors = [2, 3, 5, 7]
 
 #prompt user to input number until user inputs positive whole number or quits
 def input_num():
@@ -15,7 +15,7 @@ def input_num():
 
 #determine if number is prime
 def determine_is_prime(number):
-    if number in [2,3,5,7]:
+    if number in divisors:
         return True
     else:
         for divisor in divisors:
