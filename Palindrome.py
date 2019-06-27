@@ -20,6 +20,12 @@ def reverse_string(word):
     reversed_string = word[::-1]
     return reversed_string
 
+#another approach from the review session
+#learn how to do things in these basic ways for interview prep, etc.
+# for index in range(len(word) - 1, -1, -1):
+#     reversed_string = reversed_string + word[index]
+#     return reversed_string
+
 #determine if string equals reverse string (eg palindrome)
 def determine_is_palindrome(word, reversed_word):
     if word.lower() == reversed_word.lower():
@@ -31,7 +37,7 @@ def determine_is_palindrome(word, reversed_word):
 def display_is_palindrome(is_palindrome):
     if is_palindrome == True:
         print(f"{word} is a palindrome :) ")
-    elif is_palindrome == False:
+    else:
         print(f"{word} is not a palindrome :(")
     
 #execute functions

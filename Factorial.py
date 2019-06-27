@@ -18,6 +18,17 @@ def calc_factorial(number):
         number -= 1
     return factorial
 
+#another approach from the review session
+#for index in range(0,number+1):
+#   factorial = 1
+#   factorial *= index
+#   return factorial
+# or
+#for index in range(number,0,-1):
+#   factorial = 1
+#   factorial *= index
+#   return factorial
+
 #print factorial
 def display_factorial(factorial):
     print(factorial)

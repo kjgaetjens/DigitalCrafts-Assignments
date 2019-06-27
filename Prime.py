@@ -13,6 +13,17 @@ def input_num():
     num = int(num)
     return num
 
+#another approach from the review session
+# is_prime = True
+# for index in range(2,number):
+#     if number % index == 0:
+#         is_prime = False
+#         break
+# if is_prime:
+#     print("PRIME")
+# else:
+#     print("NOT PRIME")
+
 #determine if number is prime
 def determine_is_prime(number):
     if number in divisors:
