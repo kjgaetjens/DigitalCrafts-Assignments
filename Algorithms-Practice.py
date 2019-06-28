@@ -13,12 +13,22 @@ def removeDuplicates(lst):
                 break
     return lst
 
-
 test_list = ["Alex","John","Mary","Steve","John", "Steve"]
 print(removeDuplicates(test_list))
 
  
 # Assignment: Write a program which finds the largest element in the array 
+
+def findMax(lst):
+    max = 0
+    for i in lst:
+        if i > max:
+            max = i
+    return max
+
+test_list_nums = [1, 2.4, 6, 2, 6, 5, 6.3, -1, -7]
+print(findMax(test_list_nums))
+
 
 # Assigmment: Write a program which finds the smallest element in the array
 
