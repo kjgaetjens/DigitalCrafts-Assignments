@@ -51,14 +51,23 @@ def missing_num(lst):
         for item in lst:
             if item == i:
                 in_list = True
+                break
         if in_list == False:
             return i
 
-array_of_ten = [0, 1, 2, 3, 4, 6, 7, 8, 9]
+array_of_ten = [0, 1, 2, 3, 4, 5, 7, 8, 9]
 print(missing_num(array_of_ten))
 
 
 # Assignment: given an array [1,2,3,4,5] write a function that duplicates the array ([1,2,3,4,5,1,2,3,4,5]), you may modify or create a new array.
+
+def dupe_list(lst):
+    duplicated_list = lst + lst
+    return duplicated_list
+
+test_list = [1,1,2,4,6]
+print(dupe_list(test_list))
+
 
 # HARD Assignment - Write a program to display a pyramid as shown below:
 #    *
