@@ -4,7 +4,7 @@
 # After the duplicates are removed it should be 
 # names = ["Alex","John","Mary","Steve"]
 
-def removeDuplicates(lst):
+def remove_duplicates(lst):
     for i in range(len(lst)-1, -1, -1):
         item = lst[i]
         for r in range(i-1, -1, -1):
@@ -14,23 +14,33 @@ def removeDuplicates(lst):
     return lst
 
 test_list = ["Alex","John","Mary","Steve","John", "Steve"]
-print(removeDuplicates(test_list))
+print(remove_duplicates(test_list))
 
  
 # Assignment: Write a program which finds the largest element in the array 
 
-def findMax(lst):
-    max = 0
+def find_max(lst):
+    max = lst[0]
     for i in lst:
         if i > max:
             max = i
     return max
 
 test_list_nums = [1, 2.4, 6, 2, 6, 5, 6.3, -1, -7]
-print(findMax(test_list_nums))
+print(find_max(test_list_nums))
 
 
 # Assigmment: Write a program which finds the smallest element in the array
+
+def find_min(lst):
+    min = lst[0]
+    for i in lst:
+        if i < min:
+            min = i
+    return min
+
+test_list_nums = [1, 2.4, 6, 2, 6, 5, 6.3, -1, -7]
+print(find_min(test_list_nums))
 
 # Assignment: Assume you're suppose tp have an array of 10 integers from 0-9. One number is missing. Write a function that will determine the missing element.
 
