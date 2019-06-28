@@ -42,7 +42,21 @@ def find_min(lst):
 test_list_nums = [1, 2.4, 6, 2, 6, 5, 6.3, -1, -7]
 print(find_min(test_list_nums))
 
-# Assignment: Assume you're suppose tp have an array of 10 integers from 0-9. One number is missing. Write a function that will determine the missing element.
+
+# Assignment: Assume you're supposed to have an array of 10 integers from 0-9. One number is missing. Write a function that will determine the missing element.
+
+def missing_num(lst):
+    for i in range(10):
+        in_list = False
+        for item in lst:
+            if item == i:
+                in_list = True
+        if in_list == False:
+            return i
+
+array_of_ten = [0, 1, 2, 3, 4, 6, 7, 8, 9]
+print(missing_num(array_of_ten))
+
 
 # Assignment: given an array [1,2,3,4,5] write a function that duplicates the array ([1,2,3,4,5,1,2,3,4,5]), you may modify or create a new array.
 
