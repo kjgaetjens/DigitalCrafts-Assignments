@@ -70,7 +70,18 @@ print(dupe_list(test_list))
 
 
 # HARD Assignment - Write a program to display a pyramid as shown below:
-#    *
-#   ***
-#  *****
-# *******
+#    * 1    4
+#   *** 3   3
+#  ***** 5  2
+# ******* 7 1
+
+def pyramid(character,lines):
+    num_char = 1
+    space = " "
+    num_space = lines
+    while num_space > 0:
+        print(f"{space*num_space}{character*num_char}{space*num_space}")
+        num_char += 2
+        num_space -= 1
+
+pyramid("*",4)
