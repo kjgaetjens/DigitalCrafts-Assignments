@@ -29,6 +29,15 @@ def calc_factorial(number):
 #   factorial *= index
 #   return factorial
 
+#another approach from the exception session
+# try:
+#     #move the variable declaration here
+#     #move calc_factorial() here
+# else#Error:
+#     #do the error while loop i did in input_num
+#     #variable declaration here
+#     #run calc_factorial() again
+
 #print factorial
 def display_factorial(factorial):
     print(factorial)
