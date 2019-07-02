@@ -13,6 +13,5 @@ class ShoppingList:
 
     @staticmethod
     def create_shopping_list(title, address):
-        print(address)
         shopping_list = ShoppingList(title, address)
         return shopping_list
