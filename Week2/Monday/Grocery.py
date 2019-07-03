@@ -80,9 +80,19 @@ def view_lists():
     for i in range(len(shopping_lists)):
         print(f"{i}      - {shopping_lists[i].title}")
 
+def intake_shopping_list():
+    shopping_list_title = input("Enter a name for your shopping list: ")
+    shopping_list_address = input("Enter an address for your shopping list or press \"Enter\" to continue: ")
+    print(shopping_list_address)
+    return (shopping_list_title, shopping_list_address)
+
+def create_shopping_list(title, address):
+    shopping_list = ShoppingList(title, address)
+    return shopping_list
+
 def new_shopping_list():
-    (list_title, list_address) = ShoppingList.intake_shopping_list()
-    shopping_list = ShoppingList.create_shopping_list(list_title, list_address)
+    (list_title, list_address) = intake_shopping_list()
+    shopping_list = create_shopping_list(list_title, list_address)
     shopping_lists.append(shopping_list)
     
 
@@ -94,11 +104,20 @@ def view_list_items(lst):
     for item in shopping_list:
         print(f"{item.title} - {item.quantity} - {item.price}")
 
+def intake_grocery_item():
+    grocery_list_title = input("Enter an item to add to your list: ")
+    grocery_list_quantity = input("Enter the quantity of this item you need to buy: ")
+    grocery_list_price = input("Enter the price of the item you need to buy or press \"Enter\" to continue: ")
+    return (grocery_list_title, grocery_list_quantity, grocery_list_price)
+
+def create_grocery_item(title, quantity, price):
+    grocery_item = GroceryItem(title, quantity, price)
+    return grocery_item
+
 def new_grocery_item():
-    (item_title, item_quantity, item_price) = GroceryItem.intake_grocery_item()
-    grocery_item = GroceryItem.create_grocery_item(item_title, item_quantity, item_price)
+    (item_title, item_quantity, item_price) = intake_grocery_item()
+    grocery_item = create_grocery_item(item_title, item_quantity, item_price)
     selected_list.contents.append(grocery_item)
-    
 
 
 #execute
