@@ -166,8 +166,7 @@ def check_if_occupied(selected_table_num):
 #check-out table
 def check_out_table(selected_table_num):
     selected_table = tables[int(selected_table_num) - 1]
-    #selected_table.start_time = datetime.now()
-    selected_table.start_time = datetime(2019,7,3,11,30)
+    selected_table.start_time = datetime.now()
     selected_table.is_occupied = True
     print(f"You have checked-out Table {selected_table_num} at {selected_table.start_time}")
     print("")
