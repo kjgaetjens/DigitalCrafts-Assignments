@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, Helvetica, sans-serif
+
+}
+
+h3 {
+    font-weight: normal;
+}
+
+p {
+    font-size: .75em;
+}
+
+/*banner*/
+.top-banner {
+    background-color: rgb(80 168 250);
+    width: 100%;
+    height: auto;
+}
+
+.top-banner div { 
+    display: inline-block;
+    vertical-align: middle;
+    padding: .25em 1em;
+}
+
+.logo img {
+    height: 2em;
+}
+
+.menu a {
+    color: white;
+    font-size: 1.17em;
+    text-decoration: none;
+}
+
+.menu.selected a {
+    font-weight: bold;
+}
+
+/*main*/
+.main {
+    width: 96%;
+    height: auto;
+    padding: 1.5% 2%;
+}
+
+/*home*/
+.headline {
+    background-color: rgb(221 222 224);
+    padding: .15em 1.25em;
+}
+
+.headline h2 {
+    color: rgb(83 88 95);
+    padding-bottom: .5em;
+}
+
+.article h3 {
+    color: rgb(0 102 192);
+    margin-top: 1.25em;
+    margin-bottom: .5em;
+}
+
+.article p {
+    margin-top: .1em;
+    margin-bottom: .1em;
+}
+
+.engagement-banner {
+    background-color: rgb(243 144 23);
+    padding: .25em .5em .25em .5em;
+}
+
+.engagement-banner span {
+    color: white;
+    font-weight: bold;
+    margin-right: 3em;
+}
+
+/*categories*/
+.category-main {
+    width: 96%;
+    height: auto;
+    padding: 1.5% 2%;
+}
+
+@media only screen and (min-width: 895px) and (max-width: 1125px) {
+    .category-main {
+        width: 76%;
+        height: auto;
+        padding: 1.5% 12%;
+    }
+}
+
+@media only screen and (min-width: 1125px) and (max-width: 1485px) {
+    .category-main {
+        width: 56%;
+        height: auto;
+        padding: 1.5% 22%;
+    }
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.category-block {
+    background-color: rgb(221 222 224);
+    width: 175px;
+    height: auto;
+    padding: 3.5em .1em .1em .1em;
+    margin: 2%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.category-block a {
+    font-size: 1.75em;
+    text-decoration: none;
+}
+
+.category-block a:hover {
+    text-decoration: underline
+}
+
+.category-block p {
+    font-size: 1em;
+    color: rgb(89 94 102);
+}
