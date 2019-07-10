@@ -72,12 +72,16 @@
     }
 
     .product {
-        height: 250px;
+        height: 35vh;
         margin-bottom: 1em;
     }
 
     .product .image {
-        height: 220px;
+        height: 90%;
+    }
+
+    .product .caption {
+        height: 10%;
     }
 
     .product .image img {
