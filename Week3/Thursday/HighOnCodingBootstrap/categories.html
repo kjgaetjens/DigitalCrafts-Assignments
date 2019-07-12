@@ -7,43 +7,67 @@
         <title>Home</title>
     </head>
     <body>
-        <!-- top menu outer container-->
-        <div class="top-banner">
-            <div class="logo">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">
                 <img src="images/logo.gif"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="images/toggle.gif"/></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-item nav-link" href="index.html"><h3>Home</h3></a>
+                <a class="nav-item nav-link active" href="categories.html"><h3>Categories</h3><span class="sr-only">(current)</span></a>
+                </div>
             </div>
-            <div class="menu">
-                <a href="index.html"><h3>Home</h3></a>
+        </nav>
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Javascript</h3>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">23 articles</small>
+                </div>
             </div>
-            <div class="menu selected">
-                <a href="categories.html"><h3>Categories</h3></a>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">C#</h3>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">12 articles</small>
+                </div>
             </div>
-        </div>
-        <div class="category-main">
-            <div class="categories">
-                <div class="category-block">
-                    <a><h3>Javascript</h3></a>
-                    <p>23 articles</p>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Swift/Objc</h3>
                 </div>
-                <div class="category-block">
-                    <a><h3>C#</h3></a>
-                    <p>12 articles</p>
+                <div class="card-footer">
+                    <small class="text-muted">34 articles</small>
                 </div>
-                <div class="category-block">
-                    <a><h3>Swift/Objc</h3></a>
-                    <p>34 articles</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Database</h3>
                 </div>
-                <div class="category-block">
-                    <a><h3>Database</h3></a>
-                    <p>15 articles</p>
+                <div class="card-footer">
+                    <small class="text-muted">15 articles</small>
                 </div>
-                <div class="category-block">
-                    <a><h3>Python</h3></a>
-                    <p>33 articles</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Python</h3>
                 </div>
-                <div class="category-block">
-                    <a><h3>VB.NET</h3></a>
-                    <p>5 articles</p>
+                <div class="card-footer">
+                    <small class="text-muted">33 articles</small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">VB.NET</h3>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">5 articles</small>
                 </div>
             </div>
         </div>

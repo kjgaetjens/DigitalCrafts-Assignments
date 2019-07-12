@@ -3,34 +3,32 @@ h3 {
 }
 
 /*banner*/
-.top-banner {
+
+.navbar {
     background-color: rgb(80 168 250);
+    margin-bottom: 1.25rem;
 }
 
-.top-banner div { 
-    display: inline-block;
-    vertical-align: middle;
-    padding: .75rem 1rem;
-}
-
-.logo img {
+.navbar-brand img {
     height: 2.5rem;
 }
 
-.menu a {
-    color: white;
-    text-decoration: none;
+.navbar-toggler img {
+    width: 100%;
+    height: 100%;
+    background: transparent;
 }
 
+.nav-item {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
 
-.menu.selected h3 {
+.active h3 {
     font-weight: bold;
 }
 
-/*main*/
-.main {
-    padding: 1.5% 2%;
-}
 
 /*home*/
 .headline {
@@ -64,56 +62,4 @@ h3 {
     color: white;
     font-weight: bold;
     margin-right: 3rem;
-}
-
-/*categories*/
-.category-main {
-    width: 96%;
-    height: auto;
-    padding: 1.5% 2%;
-}
-
-/*
-@media only screen and (min-width: 895px) and (max-width: 1125px) {
-    .category-main {
-        width: 76%;
-        height: auto;
-        padding: 1.5% 12%;
-    }
-}
-
-@media only screen and (min-width: 1125px) and (max-width: 1485px) {
-    .category-main {
-        width: 56%;
-        height: auto;
-        padding: 1.5% 22%;
-    }
-}
-*/
-
-.categories {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.category-block {
-    background-color: rgb(221 222 224);
-    width: 175px;
-    height: auto;
-    padding: 3.5rem .1rem .1rem .1rem;
-    margin: 2vh 1%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.category-block h3:hover {
-    text-decoration: underline
-}
-
-.category-block p {
-    color: rgb(89 94 102);
 }
