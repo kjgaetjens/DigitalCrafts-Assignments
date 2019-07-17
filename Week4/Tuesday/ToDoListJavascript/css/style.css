@@ -106,7 +106,6 @@ ul {
         display: flex;
         align-items: center;
         margin-left: 4em;
-        width: 75%;
         white-space: nowrap; 
         overflow: hidden;
         text-overflow: ellipsis;
