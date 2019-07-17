@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+#enterTask {
+    display: flex;
+    justify-content: space-between;
+}
+
+label {
+    font-size: .9em;
+    color: rgb(134 135 137)
+}
+
+#newTaskButton {
+    background-color: rgb(52 165 218);
+    color: white;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+h4 {
+    color: rgb(146 148 148);
+    font-weight: normal;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-box {
+    background-color: rgb(52 165 218);
+    height: 3em;
+    width: auto;
+    margin-bottom: .5em;
+}
+
+.task-box.placeholder {
+    background-color: white;
+    border: 2px dotted rgb(52 165 218);
+    color: rgb(125 202 239);
+    text-align: center;
+    font-size: .75em;
+}
+
+.placeholder-div {
+    display: flex;
+    align-items: center;
+}
+
+.task-box div {
+    display: inline-flex;
+    height: 100%;
+}
+
+.check-box-div {
+    display: flex;
+    align-items: center;
+    float: left;
+    padding-left: 1em;
+}
+
+.title-div {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+    width: 65%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.remove-div {
+    display: flex;
+    align-items: center;
+    float: right;
+    padding-right: 1em;
+}
+
+.task-box input {
+    border: 2px normal blue;
+}
+
+.task-box h3 {
+    color: white;
+    font-weight: normal;
+    margin: 0px;
+}
+
+.task-box a {
+    color: rgb(125 202 239);
+    font-size: .75em;
+}
+
+.task-box a:hover {
+    color: white;
+}
+
+@media only screen and (min-width: 480px) {
+    #enterTask {
+        justify-content: space-around;
+    }
+    .title-div {
+        display: flex;
+        align-items: center;
+        margin-left: 4em;
+        width: 75%;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
