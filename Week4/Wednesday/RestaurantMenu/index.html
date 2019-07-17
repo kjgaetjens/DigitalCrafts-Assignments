@@ -6,42 +6,36 @@
     <title>Menu</title>
 </head>
 <body>
-  <header id="nav">
+  <div id="nav">
     <h1>Menu</h1>
-    <span><a href=#startersContainer>Starters</a></span>
-    <span><a href=#entreesContainer>Entrees</a></span>
-    <span><a href=#dessertsContainer>Desserts</a></span>
-  </header> 
+    <div id="categoryMenu">
+        <span><a href=#startersContainer class="menu-option" >Starters</a></span>
+        <span><a href=#entreesContainer class="menu-option">Entrees</a></span>
+        <span><a href=#dessertsContainer class="menu-option">Desserts</a></span>
+    </div>
+  </div> 
   <div id="main">
-    <div id="startersContainer">
+    <div id="startersContainer" class="menu-category">
       <h2>Starters</h2>
       <ul id="starters">
 
       </ul>
     </div>
-    <div id="entreesContainer">
+    <div id="entreesContainer" class="menu-category">
       <h2>Entrees</h2>
       <ul id="entrees">
 
       </ul>
     </div>
-  </div>
-  <div id="dessertsContainer">
-    <h2>Desserts</h2>
-    <ul id="desserts">
+    <div id="dessertsContainer" class="menu-category">
+      <h2>Desserts</h2>
+      <ul id="desserts">
 
-    </ul>
+      </ul>
+    </div>
   </div>
   <script src="js/dishes.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
-
-
-<!--
-  maybe bootstrap the header and add a nav tool
-  fix creme brulee title
-  if no vegetarian, have placeholder
-
--->
 

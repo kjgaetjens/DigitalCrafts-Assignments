@@ -31,10 +31,10 @@ const generateMenu = () => {
     let dessertsArray = []
     dishes.forEach(dish => {
         let dishDiv = 
-        `<div>
+        `<div class="menu-item">
             <h3>${dish.title}</h3>
-            <p>${dish.description}</p>
             <h5>${dish.price}</h5>
+            <p>${dish.description}</p>
             <img src="${dish.imageURL}"></img>
         </div>`
         if (dish.course == "Starters") {
@@ -63,7 +63,7 @@ const generateMenu = () => {
 
     let vegetarian = `<a id="vegetarian" onclick="filterVegetarian()">Vegetarian Menu</a>`
     nav.insertAdjacentHTML("beforeend", vegetarian)
-    if (nav.childElementCount == 6) {
+    if (nav.childElementCount == 4) {
         allFood.remove(this)
     }
 }
@@ -81,10 +81,10 @@ const filterVegetarian = () => {
     )
     vegetarianDishes.forEach(dish => {
         let dishDiv = 
-        `<div>
+        `<div class="menu-item">
             <h3>${dish.title}</h3>
-            <p>${dish.description}</p>
             <h5>${dish.price}</h5>
+            <p>${dish.description}</p>
             <img src="${dish.imageURL}"></img>
         </div>`
         if (dish.course == "Starters") {
@@ -113,7 +113,7 @@ const filterVegetarian = () => {
 
     let allFood = `<a id="allFood" onclick="generateMenu()">Back to Main Menu</a>`
     nav.insertAdjacentHTML("beforeend", allFood)
-    if (nav.childElementCount == 6) {
+    if (nav.childElementCount == 4) {
         vegetarian.remove(this)
     }
 }
