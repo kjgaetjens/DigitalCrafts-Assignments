@@ -25,11 +25,11 @@ let emptySectionDiv =
     <p>Sorry, there are no items available. Please enjoy our other menu options.</p>
 </div>`
 
-const generateMenu = () => {
+const generateMenu = (dishList) => {
     let startersArray = []
     let entreesArray = []
     let dessertsArray = []
-    dishes.forEach(dish => {
+    dishList.forEach(dish => {
         let dishDiv = 
         `<div class="menu-item">
             <h3>${dish.title}</h3>
@@ -60,62 +60,33 @@ const generateMenu = () => {
     } else {
         desserts.innerHTML = emptySectionDiv
     }
+}
 
-    let vegetarian = `<a id="vegetarian" onclick="filterVegetarian()">Vegetarian Menu</a>`
+const generateMainMenu = () => {
+    generateMenu(dishes)
+
+    let vegetarian = `<a id="vegetarian" onclick="generateVegetarianMenu()">Vegetarian Menu</a>`
     nav.insertAdjacentHTML("beforeend", vegetarian)
     if (nav.childElementCount == 4) {
         allFood.remove(this)
     }
 }
 
-
-const filterVegetarian = () => {
-    let startersArray = []
-    let entreesArray = []
-    let dessertsArray = []
-    vegetarianDishes = dishes.filter(dish => {
+const generateVegetarianMenu = () => {
+    let vegetarianDishes = dishes.filter(dish => {
         if (dish.isVegetarian) {
             return dish
         }
     }
     )
-    vegetarianDishes.forEach(dish => {
-        let dishDiv = 
-        `<div class="menu-item">
-            <h3>${dish.title}</h3>
-            <h5>${dish.price}</h5>
-            <p>${dish.description}</p>
-            <img src="${dish.imageURL}"></img>
-        </div>`
-        if (dish.course == "Starters") {
-            startersArray.push(dishDiv)
-        } else if (dish.course == "Entrees") {
-            entreesArray.push(dishDiv)
-        } else if (dish.course == "Desserts") {
-            dessertsArray.push(dishDiv)
-        }
-    })
-    if (startersArray.length > 0) {
-        starters.innerHTML = startersArray.join("")
-    } else {
-        starters.innerHTML = emptySectionDiv
-    }
-    if (entreesArray.length > 0) {
-        entrees.innerHTML = entreesArray.join("")
-    } else {
-        entrees.innerHTML = emptySectionDiv
-    }
-    if (dessertsArray.length > 0) {
-        desserts.innerHTML = dessertsArray.join("")
-    } else {
-        desserts.innerHTML = emptySectionDiv
-    }
 
-    let allFood = `<a id="allFood" onclick="generateMenu()">Back to Main Menu</a>`
+    generateMenu(vegetarianDishes)
+
+    let allFood = `<a id="allFood" onclick="generateMainMenu()">Back to Main Menu</a>`
     nav.insertAdjacentHTML("beforeend", allFood)
     if (nav.childElementCount == 4) {
         vegetarian.remove(this)
     }
 }
 
-generateMenu()
+generateMainMenu()
