@@ -62,14 +62,25 @@ const generateMenu = (dishList) => {
     }
 }
 
+const switchMenuOption = (menuOption) => {
+    if (menuOption == 'vegetarian') {
+        let vegetarian = `<a id="vegetarian" onclick="generateVegetarianMenu()">Vegetarian Menu</a>`
+        nav.insertAdjacentHTML("beforeend", vegetarian)
+        if (nav.childElementCount == 4) {
+            allFood.remove(this)
+        }
+    } else if (menuOption == 'allFood') {
+        let allFood = `<a id="allFood" onclick="generateMainMenu()">Back to Main Menu</a>`
+        nav.insertAdjacentHTML("beforeend", allFood)
+        if (nav.childElementCount == 4) {
+            vegetarian.remove(this)
+        }
+    }
+}
+
 const generateMainMenu = () => {
     generateMenu(dishes)
-
-    let vegetarian = `<a id="vegetarian" onclick="generateVegetarianMenu()">Vegetarian Menu</a>`
-    nav.insertAdjacentHTML("beforeend", vegetarian)
-    if (nav.childElementCount == 4) {
-        allFood.remove(this)
-    }
+    switchMenuOption('vegetarian')
 }
 
 const generateVegetarianMenu = () => {
@@ -79,14 +90,8 @@ const generateVegetarianMenu = () => {
         }
     }
     )
-
     generateMenu(vegetarianDishes)
-
-    let allFood = `<a id="allFood" onclick="generateMainMenu()">Back to Main Menu</a>`
-    nav.insertAdjacentHTML("beforeend", allFood)
-    if (nav.childElementCount == 4) {
-        vegetarian.remove(this)
-    }
+    switchMenuOption('allFood')
 }
 
 generateMainMenu()
