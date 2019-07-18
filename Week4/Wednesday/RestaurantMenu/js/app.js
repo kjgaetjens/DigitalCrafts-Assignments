@@ -62,6 +62,16 @@ const generateMenu = (dishList) => {
     }
 }
 
+const filterVegetarian = () => {
+    let vegetarianDishes = dishes.filter(dish => {
+        if (dish.isVegetarian) {
+            return dish
+        }
+    }
+    )
+    return vegetarianDishes
+}
+
 const switchMenuOption = (menuOption) => {
     if (menuOption == 'vegetarian') {
         let vegetarian = `<a id="vegetarian" onclick="generateVegetarianMenu()">Vegetarian Menu</a>`
@@ -78,18 +88,14 @@ const switchMenuOption = (menuOption) => {
     }
 }
 
+
 const generateMainMenu = () => {
     generateMenu(dishes)
     switchMenuOption('vegetarian')
 }
 
 const generateVegetarianMenu = () => {
-    let vegetarianDishes = dishes.filter(dish => {
-        if (dish.isVegetarian) {
-            return dish
-        }
-    }
-    )
+    let vegetarianDishes = filterVegetarian()
     generateMenu(vegetarianDishes)
     switchMenuOption('allFood')
 }
