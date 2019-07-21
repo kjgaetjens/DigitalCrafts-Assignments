@@ -1,15 +1,13 @@
 $(document).ready(() => {
 
+//change ids to hyphens
+
 let $pendingTasks = $('#pendingTasks')
 let $completedTasks = $('#completedTasks')
 let $newTaskButton = $('#newTaskButton')
 
-//change ids to hyphens
-
-
-
-// let pendingPlaceholder = document.getElementById("pendingPlaceholder")
-// let completedPlaceholder = document.getElementById("completedPlaceholder")
+let $pendingPlaceholder = $('#pendingPlaceholder')
+let $completedPlaceholder = $('#completedPlaceholder')
 
 // //add pending task placeholder
 // function addPendingPlaceholder() {
@@ -89,8 +87,7 @@ $newTaskButton.on('click', function() {
     
         // taskCheckBox.addEventListener("click", moveList)
         // taskRemove.addEventListener("click", removeList)
-        // pendingPlaceholder.remove(this)
-
+        $pendingPlaceholder.hide()
         $newTask.appendTo($pendingTasks)
         $newTaskInput.val('')
     }
