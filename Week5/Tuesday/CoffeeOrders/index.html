@@ -4,16 +4,23 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <div id="add-order">
+        <!-- <div id="add-order">
             <form action="http://dc-coffeerun.herokuapp.com/api/coffeeorders/" method="POST">
                 <h3>Add Order</h2>
-                <!--need to add fields for each required POST field to form-->
                 <label for="email">Email Address:</label>
                 <input id="email" type="text" name="emailAddress"/>
                 <label for="coffee">Order:</label>
                 <input id="coffee" type="text" name="coffee"/>
                 <input type="submit" value="Add"/>
             </form>
+        </div> -->
+        <div id="add-order">
+            <h3>Add Order</h2>
+            <label for="email">Email Address:</label>
+            <input id="email" type="text" name="emailAddress"/>
+            <label for="coffee">Order:</label>
+            <input id="coffee" type="text" name="coffee"/>
+            <button id="add">Add</button>
         </div>
         <div id="search-order">
             <!--maybe use keyup for instant search-->

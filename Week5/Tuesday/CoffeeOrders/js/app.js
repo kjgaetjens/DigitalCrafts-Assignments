@@ -19,11 +19,27 @@
 
 
 
-//maybe try to do add form via javascript
+//go back and add form via javascript
 
 //get all the orders and display on screen
 let ordersUrl = 'http://dc-coffeerun.herokuapp.com/api/coffeeorders/'
 let ordersList = document.getElementById('orders-list')
+
+let addButton = document.getElementById('add')
+addButton.addEventListener('click', function() {
+    let emailAddress = document.getElementById('email').value
+    let coffee = document.getElementById('coffee').value
+    fetch(ordersUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          'emailAddress': emailAddress,
+          'coffee': coffee,
+        })
+      })
+})
 
 
 async function fetchOrders() {
