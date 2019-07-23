@@ -10,9 +10,40 @@
 // Create new order: 
 // http://dc-coffeerun.herokuapp.com/api/coffeeorders/
 // Params: emailAddress (string), coffee (string) 
+
 // Get order by email: 
-
 // http://dc-coffeerun.herokuapp.com/api/coffeeorders/emailaddress
+
 // Delete order by email: 
-
 // http://dc-coffeerun.herokuapp.com/api/coffeeorders/emailaddress
+
+
+
+//maybe try to do add form via javascript
+
+//get all the orders and display on screen
+let ordersUrl = 'http://dc-coffeerun.herokuapp.com/api/coffeeorders/'
+let ordersList = document.getElementById('orders-list')
+
+
+async function fetchOrders() {
+    let response = await fetch(ordersUrl)
+    return await response.json()
+}
+
+async function displayOrders(fetchedJSON) {
+    fetchedJSON().then(json => {
+        let orderValues = Object.values(json)
+        let orders = orderValues.map(order => {
+            return `
+                <li class="order">
+                    <span>${order['emailAddress']}</span><br>
+                    <span>${order['coffee']}</span>
+                </li>
+            `
+        })
+        ordersList.innerHTML = orders.join('')
+    })
+}
+
+displayOrders(fetchOrders)
