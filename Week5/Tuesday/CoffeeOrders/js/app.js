@@ -27,39 +27,80 @@ let ordersList = document.getElementById('orders-list')
 
 let addButton = document.getElementById('add')
 addButton.addEventListener('click', function() {
-    let emailAddress = document.getElementById('email').value
-    let coffee = document.getElementById('coffee').value
+    let emailAddress = document.getElementById('email')
+    let coffee = document.getElementById('coffee')
     fetch(ordersUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          'emailAddress': emailAddress,
-          'coffee': coffee,
+          'emailAddress': emailAddress.value,
+          'coffee': coffee.value,
         })
-      })
+      })//should refresh orders here
+    emailAddress.value = ''
+    coffee.value = ''
 })
+        //add success message that gets cleared after a few seconds using timeout?
+        //refresh orders at interval / when new item added
 
+let deleteButton = document.getElementById('delete')
+deleteButton.addEventListener('click', function() {
+    let emailAddress = document.getElementById('delete-email')
+    let urlWithAddress = ordersUrl + emailAddress.value
+    fetch(urlWithAddress, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'emailAddress': emailAddress.value
+        })
+    })//should refresh orders here
+    emailAddress.value = ''
+})       
 
 async function fetchOrders() {
     let response = await fetch(ordersUrl)
     return await response.json()
 }
 
+async function fetchFilteredOrders() {
+    let emailAddress = document.getElementById('search-email')
+    let urlWithAddress = ordersUrl + emailAddress.value
+    let response = await fetch(urlWithAddress)
+    return await response.json()
+}
+
 async function displayOrders(fetchedJSON) {
     fetchedJSON().then(json => {
-        let orderValues = Object.values(json)
-        let orders = orderValues.map(order => {
-            return `
-                <li class="order">
-                    <span>${order['emailAddress']}</span><br>
-                    <span>${order['coffee']}</span>
-                </li>
-            `
-        })
-        ordersList.innerHTML = orders.join('')
+        if (json['_id']) {
+            ordersList.innerHTML = `
+            <li class="order">
+                <span>${json['emailAddress']}</span><br>
+                <span>${json['coffee']}</span><br>
+            </li>
+        `
+        }
+        else {
+            let orderValues = Object.values(json)
+            let orders = orderValues.map(order => {
+                return `
+                    <li class="order">
+                        <span>${order['emailAddress']}</span><br>
+                        <span>${order['coffee']}</span><br>
+                    </li>
+                `
+            })
+            ordersList.innerHTML = orders.join('')
+        }
     })
 }
+
+let searchButton = document.getElementById('search')
+searchButton.addEventListener('click', function() {
+    displayOrders(fetchFilteredOrders)
+})       
 
 displayOrders(fetchOrders)
