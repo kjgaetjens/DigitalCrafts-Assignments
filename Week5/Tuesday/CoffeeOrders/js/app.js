@@ -101,6 +101,8 @@ async function displayOrders(fetchedJSON) {
 let searchButton = document.getElementById('search')
 searchButton.addEventListener('click', function() {
     displayOrders(fetchFilteredOrders)
+    let emailAddress = document.getElementById('search-email')
+    emailAddress.value = ''
 })       
 
 displayOrders(fetchOrders)
