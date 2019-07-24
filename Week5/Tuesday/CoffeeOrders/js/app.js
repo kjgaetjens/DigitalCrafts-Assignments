@@ -19,7 +19,9 @@
 
 
 
-//go back and add form via javascript
+//add drop down for coffee orders
+//add pattern validation for fields
+//add code to refresh page after order and utilize the fetch response
 
 //get all the orders and display on screen
 let ordersUrl = 'http://dc-coffeerun.herokuapp.com/api/coffeeorders/'
@@ -38,7 +40,7 @@ addButton.addEventListener('click', function() {
           'emailAddress': emailAddress.value,
           'coffee': coffee.value,
         })
-      })//should refresh orders here
+      })//should refresh orders here (get response from post to make sure it went htorugh and then back on that send a messag eand refresh the page so tht the updated orders are there)
     emailAddress.value = ''
     coffee.value = ''
 })
