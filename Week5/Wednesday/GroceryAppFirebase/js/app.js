@@ -10,7 +10,8 @@
 // * Allow user to add items to the grocery categories
 // * Allow the user to login and then store the categories for that user. This means each category in Firebase will be associated with a particular user. 
 
-
+//convert to classes
+//add groceries to the store
 
 //declare variables
 let groceryCatRef = database.ref('categories')
