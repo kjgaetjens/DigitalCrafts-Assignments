@@ -12,10 +12,6 @@ let addItemButton = document.getElementById('add-item-button')
 
 //use cat id to populate page
 
-//add data (make sure to add if/else validation to make sure they entered info into cat name field)
-//want to add to groceries array - right now i dont think i have it pushing to the right place
-//will have to have it update the array instaad of using push to replace it completely
-//not pushing; just selecting the appropriate element and updating it
 
 const addItem = (name) => {
     groceryListRef.push({
@@ -46,7 +42,7 @@ const displayItems = items => {
 }
 
 //change this to the grocerylist child
-grocerySingleCatRef.on('value', snap => {
+groceryListRef.on('value', snap => {
     let itemValuesArray = []
 
     for(key in snap.val()) {
