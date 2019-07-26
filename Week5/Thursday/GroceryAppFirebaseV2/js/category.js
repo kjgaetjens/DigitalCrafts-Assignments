@@ -3,11 +3,27 @@ let catId = url.substring(url.indexOf('?')+1, url.length)
 console.log(catId)
 let grocerySingleCatRef = database.ref(catId)
 let itemList = document.getElementById('view-item-container')
+let itemNameField = document.getElementById('item-name')
+let addItemButton = document.getElementById('add-item-button')
 //should i set a new, more specific reference here?
 
 //use catid to populate the header
 
 //use cat id to populate page
+
+//add data (make sure to add if/else validation to make sure they entered info into cat name field)
+//want to add to groceries array
+const addItem = (name) => {
+    groceryCatRef.push({
+        name: name
+    })
+}
+
+addItemButton.addEventListener('click', () => {
+    let itemName = itemNameField.value
+    addItem(itemName)
+    itemNameField.value = ''
+})
 
 //maybe pull part of this out into app.js
 const displayItems = items => {

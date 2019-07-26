@@ -5,17 +5,17 @@
     </head>
     <body>
         <div>
-            <div id="add-cat-container">
-                <h2>Add New Grocery Category</h2>
-                    <label for="cat-name">Name</label>
-                    <input id="cat-name" type="text" name="name"/>
-                    <label for="cat-address">Address</label>
-                    <input id="cat-address" type="text" name="address"/>
-                    <button id="add-cat-button">Add</button>
+            <div id="cat-header">
             </div>
-            <div id="view-cat-container">
-                <h2>Grocery Categories</h2>
-                <ul id="cat-list">
+            <div id="add-item-container">
+                <h2>Add New Grocery Item</h2>
+                    <label for="item-name">Name</label>
+                    <input id="item-name" type="text" name="name"/>
+                    <button id="add-item-button">Add</button>
+            </div>
+            <div id="view-item-container">
+                <h2>Grocery Items</h2>
+                <ul id="item-list">
 
                 </ul>
             </div>
@@ -40,9 +40,8 @@
         // create an object of firebase database 
         var database = firebase.database() 
         </script>
-
         <script src="js/categories.js"></script>
         <script src="js/app.js"></script>
-        <script src="js/home.js"></script>
+        <script src="js/category.js"></script>
     </body>
 </html>

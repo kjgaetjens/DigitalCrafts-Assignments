@@ -6,8 +6,8 @@ let catAddressField = document.getElementById('cat-address')
 
 //add data (make sure to add if/else validation to make sure they entered info into cat name field)
 addCatButton.addEventListener('click', () => {
-    catName = catNameField.value
-    catAddress = catAddressField.value
+    let catName = catNameField.value
+    let catAddress = catAddressField.value
     addCat(catName, catAddress)
     catNameField.value = ''
     catAddressField.value = ''
