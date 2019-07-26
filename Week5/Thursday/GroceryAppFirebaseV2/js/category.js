@@ -25,6 +25,10 @@ addItemButton.addEventListener('click', () => {
     itemNameField.value = ''
 })
 
+const deleteItem = (id) => {
+    groceryListRef.child(id).remove()
+}
+
 //maybe pull part of this out into app.js
 const displayItems = items => {
     let itemDivArray = items.map(item => {

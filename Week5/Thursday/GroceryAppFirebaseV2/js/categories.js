@@ -8,3 +8,4 @@ class Categories {
 
 //add id?
 //add methods to this class
+
