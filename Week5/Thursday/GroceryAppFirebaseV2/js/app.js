@@ -18,26 +18,22 @@ HARDMODE:
     //-include name, address, and then grocery array in class
 //add groceries to the store
 
+
+/*
+add home button to category.html
+create another javascript file and update category.html file with that reference
+*/
+
+
+
 //declare variables
 let groceryCatRef = database.ref('categories')
-let catList = document.getElementById('cat-list')
-let addCatButton = document.getElementById('add-cat-button')
-let catNameField = document.getElementById('cat-name')
-let catAddressField = document.getElementById('cat-address')
-
-//add data (make sure to add if/else validation to make sure they entered info into cat name field)
-addCatButton.addEventListener('click', () => {
-    catName = catNameField.value
-    catAddress = catAddressField.value
-    addCat(catName, catAddress)
-    catNameField.value = ''
-    catAddressField.value = ''
-})
 
 const addCat = (name, address) => {
     groceryCatRef.push({
         name: name,
-        address: address
+        address: address,
+        groceries: [] //this doesn't actually do anything
     })
 }
 
@@ -45,30 +41,6 @@ const deleteCat = (id) => {
     groceryCatRef.child(id).remove()
 }
 
-groceryCatRef.on('value', snap => {
-    let catValuesArray = []
-
-    for(key in snap.val()) {
-        let cat = snap.val()[key]
-        cat.id = key
-        catValuesArray.push(cat)
-    }
-
-    displayCat(catValuesArray)
-})
-
-const displayCat = cats => {
-    let catDivArray = cats.map(cat => {
-        return `
-                <li class="cat-li">
-                    <div class="cat-container">
-                        <span class="cat-name-header">${cat.name}: <span>
-                        <span class="cat-address-header">${cat.address}</span>
-                        <br>
-                        <button onclick="deleteCat('${cat.id}')">Delete</button>
-                    <div>
-                </li>
-                `
-    })
-    catList.innerHTML = catDivArray.join('')
+const navToCat = (catId) => {
+    window.location.href = `category.html?${catId}`
 }
