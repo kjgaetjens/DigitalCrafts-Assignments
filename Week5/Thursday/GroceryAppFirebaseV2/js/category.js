@@ -1,7 +1,8 @@
 let url = location.href
 let catId = url.substring(url.indexOf('?')+1, url.length)
 console.log(catId)
-let grocerySingleCatRef = database.ref(catId)
+let grocerySingleCatRef = database.ref('categories').child(catId)
+let groceryListRef = database.ref(`categories/${catId}/groceries`)
 let itemList = document.getElementById('view-item-container')
 let itemNameField = document.getElementById('item-name')
 let addItemButton = document.getElementById('add-item-button')
@@ -12,10 +13,13 @@ let addItemButton = document.getElementById('add-item-button')
 //use cat id to populate page
 
 //add data (make sure to add if/else validation to make sure they entered info into cat name field)
-//want to add to groceries array
+//want to add to groceries array - right now i dont think i have it pushing to the right place
+//will have to have it update the array instaad of using push to replace it completely
+//not pushing; just selecting the appropriate element and updating it
+
 const addItem = (name) => {
-    groceryCatRef.push({
-        name: name
+    groceryListRef.push({
+        name: name,
     })
 }
 
@@ -33,7 +37,7 @@ const displayItems = items => {
                     <div class="item-container">
                         <span class="item-name-header">${item.name}<span>
                         <br>
-                        <button onclick="deleteItem('${cat.id}')">Delete</button>
+                        <button onclick="deleteItem('${item.id}')">Delete</button>
                     <div>
                 </li>
                 `
@@ -41,6 +45,7 @@ const displayItems = items => {
     itemList.innerHTML = itemDivArray.join('')
 }
 
+//change this to the grocerylist child
 grocerySingleCatRef.on('value', snap => {
     let itemValuesArray = []
 
