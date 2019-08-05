@@ -2,3 +2,4 @@ Practice
 __pycache__
 *.txt
 *.json
+node_modules
