@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {{> menu}}
+        <h1>{{genre}}</h1>
+        {{#movies.movies}}
+            <form action="/movies/delete-movie" method="POST">
+                <h3>Title: {{title}}</h3>
+                <img src="{{imgUrl}}" style="height: 100px; width: 100px;"/>
+                <input type="hidden" name="id" value="{{id}}"/>
+                <a href="/movies/{{id}}">Details</a>
+                <input type="submit" value="Delete"/>
+            </form>
+        {{/movies.movies}}
+    </body>
+</html>

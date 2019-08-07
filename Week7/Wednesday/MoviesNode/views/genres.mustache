@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {{> menu}}
+        <h1>Genres</h1>
+        {{#genres}}
+            <div>
+                <a href="/movies/genre/{{name}}"><h2>{{name}}</h2></a>
+            </div>
+        {{/genres}}
+    </body>
+</html>

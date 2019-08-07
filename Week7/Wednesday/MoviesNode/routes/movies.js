@@ -3,16 +3,20 @@ const app = express()
 const path = require('path')
 const mustacheExpress = require('mustache-express')
 const Movie = require('../models/movie')
+const Genre = require('../models/genre')
 
 const router = express.Router()
 
-//test data
-let movie1 = new Movie(123, 'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC84MTkvb3JpZ2luYWwvY3V0ZS1raXR0ZW4uanBn', 'Kitten Movie', 'Action', 'A very good movie about a kitten')
-let movie2 = new Movie(234, 'https://www.nationalgeographic.com/content/dam/news/2018/05/17/you-can-train-your-cat/02-cat-training-NationalGeographic_1484324.ngsversion.1526587209178.adapt.1900.1.jpg', 'Cat Movie', 'Action', 'A very good movie about a cat')
-//end test data
-
-global.movies = [movie1, movie2]
+global.movies = []
 global.deletedMovies = []
+
+const genreNames = ['Action','Comedy','Drama','Horror','Romance']
+const genres = []
+genreNames.forEach(name => {
+    let genreObj = new Genre(name)
+    genres.push(genreObj)
+})
+
 
 const VIEWS_PATH = path.join(__dirname, 'views')
 
@@ -47,22 +51,35 @@ router.post('/', (req, res) => {
 })
 
 router.post('/delete-movie', (req, res) => {
-    //push id to filtered ids
     let id = req.body.id
     global.deletedMovies.push(id)
-    //change the get for movies so that it only shows filtered ones
     res.redirect('/movies')
+})
+
+router.get('/genre', (req, res) => {
+    res.render('genres', {genres: genres})
+})
+
+router.get('/genre/:genre', (req, res) => {
+    let genreName = req.params.genre
+    let filteredMovies = []
+    global.movies.forEach(movie => {
+        if ((!deletedMovies.includes(movie.id)) && (genreName == movie.genre)) {
+            filteredMovies.push(movie)
+        }
+    })
+    let genreAndMovies = {genre: genreName, movies: filteredMovies}
+    res.render('filteredmovies', {movies: genreAndMovies})
 })
 
 
 router.get('/:movieid', (req, res) => {
     let id = req.params.movieid
-    let movie = global.movies.forEach(movie => {
+    let movie = global.movies.find(movie => {
         if (movie.id == id) {
             return movie
         }
     })
-
     res.render('moviedetails', movie)
 })
 
