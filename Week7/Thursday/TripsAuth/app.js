@@ -56,6 +56,28 @@ app.get('/login', (req,res) => {
     res.render('login')
 })
 
+app.post('/login', (req, res) => {
+    //check for session
+    if (req.session) {
+        let username = req.body.username
+        let password = req.body.password
+        let validatedUsername = users.find(user => {
+            return user.username == username && user.password == password
+        })
+        if (validatedUsername) {
+            req.session.username = username
+            res.redirect('/trip')
+        } else {
+            res.render('login', {alert: "Invalid username or password"})
+        }
+
+
+    }
+    //check for persisted user
+    //change the session name or error
+
+})
+
 app.get('/signup', (req,res) => {
     res.render('signup')
 })
@@ -63,9 +85,21 @@ app.get('/signup', (req,res) => {
 app.post('/signup', (req, res) => {
     let username = req.body.username
     let password = req.body.password
-    let userObj = new User(username, password)
-    users.push(userObj)
-    console.log(users)
+    let existingUsername = users.find(user => {
+        return user.username == username
+    })
+    if (!existingUsername) {
+        let userObj = new User(username, password)
+        users.push(userObj)
+        if (req.session) {
+            req.session.username = username
+            res.redirect('/trip')
+        }
+    } else {
+        res.render('signup', {alert: 'The username you have selected already exists'})
+    }
+
+    //build in some code to prevent duplicate usernames
 })
 
 app.listen(3000, () => {
