@@ -2,3 +2,13 @@ img {
     height: 100px; 
     width: 100px;
 }
+
+#chatbox {
+    height: 50vh;
+    overflow: scroll;
+    border: 1px solid black;
+}
+
+#chatbox li {
+    list-style: none;
+}

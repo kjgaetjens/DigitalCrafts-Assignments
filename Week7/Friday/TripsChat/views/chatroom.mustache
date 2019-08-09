@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styles.css"/>
+    </head>
+    <body>
+        {{> menu}}
+        <h1>Trip Chat</h1>
+        <div id="chatbox">
+        {{! maybe set this up so that its a fixed height and then with an overflow scroll style }}
+            <ul id="chatbox-content">
+
+            </ul>
+        </div>
+        <textarea id="chat-input" rows="1" cols="100" name="chat-input"></textarea>
+        <input id="usernamefield" type="hidden" name="username" value="{{username}}"/>
+        <button id="chat-button">Send</button>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/client.js"></script>
+    </body>
+</html>

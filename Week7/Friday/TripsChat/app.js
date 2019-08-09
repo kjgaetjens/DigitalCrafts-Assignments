@@ -8,8 +8,12 @@ Your app should allow users to do the following:
 - Allow the user to login to the website 
 - Allow the user to signout from the website 
 - Allow the user to only see their trips after they login successfully
-* Your app should work on mobile devices 
-* Google Trips is a good app for inspiration and ideas! (Available on the App Store)  
+- Allow the users to join a chat room where they can chat with other users. (OPTIONAL)
+- Display username along with the chat messages (OPTIONAL)
+* Your app should work on mobile devices
+ HARD MODE: 
+- Display the number of users joined in the chat room 
+- When the user join a chat room, then he/she gets the complete chat history of the chat
 */
 
 
@@ -23,6 +27,10 @@ const mustacheExpress = require('mustache-express')
 const session = require('express-session')
 const User = require('./models/user')
 const tripRouter = require('./routes/triproute.js')
+const chatroomRouter = require('./routes/chatroomroute.js')
+const http = require('http').createServer(app)
+
+const io = require('socket.io')(http)
 
 app.use(session({
     secret: 'mdhf888',
@@ -44,6 +52,9 @@ function authenticate(req, res, next) {
 
 app.use('/trip', authenticate)
 app.use('/trip', tripRouter)
+app.use('/chatroom', authenticate)
+app.use('/chatroom', chatroomRouter)
+
 
 const VIEWS_PATH = path.join(__dirname, 'views')
 
@@ -55,6 +66,12 @@ app.set('views',VIEWS_PATH)
 app.set('view engine','mustache')
 
 
+io.on('connection', (socket) => {
+    console.log("You are connected...")
+    socket.on('Sent',(message) => { 
+        io.emit('Sent',message)
+    })
+})
 
 
 app.get('/login', (req,res) => {
@@ -71,6 +88,7 @@ app.post('/login', (req, res) => {
         })
         if (validatedUsername) {
             req.session.username = username
+            app.locals.username = username
             res.redirect('/trip')
         } else {
             res.render('login', {alert: "Invalid username or password"})
@@ -98,6 +116,7 @@ app.post('/signup', (req, res) => {
         users.push(userObj)
         if (req.session) {
             req.session.username = username
+            app.locals.username = username
             res.redirect('/trip')
         }
     } else {
@@ -119,6 +138,6 @@ app.get('/signout', (req, res) => {
     }
 })
 
-app.listen(3000, () => {
+http.listen(3000, () => {
     console.log('Server has started...')
 })
