@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styles.css"/>
+    </head>
+    <body>
+        {{> menu}}
+        <h1>My Trips</h1>
+        <div id="view-trips">
+            {{#trips}}
+                <form action="./deletetrip" method="POST">
+                    {{tripInfo.title}}
+                    <img src="{{tripInfo.imgsrc}}">
+                    {{tripInfo.dateDepart}}
+                    {{tripInfo.dateReturn}}
+                    <input type="hidden" name="tripId" value="{{tripId}}">
+                    <input type="submit" value="Delete">
+                </form>
+            {{/trips}}
+        </div>
+    </body>
+</html>

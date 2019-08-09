@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {{> menu}}
+        <h1>Sign Up</h1>
+        {{alert}}
+        <form id="signup" action="/signup" method="POST">
+            <label for="username">Username: </label>
+            <input id="username" type="text" name="username"/>
+            <label for="password">Password: </label>
+            <input id="password" type="password" name="password">
+            <input type="submit" value="Sign Up">
+        </form>
+        <a href="/login">Already have an account? Log In</a>
+    </body>
+</html>

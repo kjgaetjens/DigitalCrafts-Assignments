@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {{> menu}}
+        <h1>Add Trip</h1>
+        <form id="add-trip" action="./addtrip" method="POST">
+            <label for="trip-title">Title:</label>
+            <input id="trip-title" type="text" name="tripTitle">
+            <label for="trip-imgsrc">Image URL:</label>
+            <input id="trip-imgsrc" type="url" name="tripImgsrc">
+            <label for="date-depart">Departure Date:</label>
+            <input id="date-depart" type="date" name="dateDepart">
+            <label for="date-return">Return Date:</label>
+            <input id="date-return" type="date" name="dateReturn">
+            <input type="submit" value="Add">
+        </form>
+    </body>
+</html>
