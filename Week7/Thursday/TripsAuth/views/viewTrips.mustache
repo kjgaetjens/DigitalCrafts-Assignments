@@ -1,6 +1,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styles.css"/>
     </head>
     <body>
         {{> menu}}
@@ -9,7 +10,7 @@
             {{#trips}}
                 <form action="./deletetrip" method="POST">
                     {{tripInfo.title}}
-                    <img src="{{tripInfo.imgsrc}}" style="height: 100px; width: 100px">
+                    <img src="{{tripInfo.imgsrc}}">
                     {{tripInfo.dateDepart}}
                     {{tripInfo.dateReturn}}
                     <input type="hidden" name="tripId" value="{{tripId}}">

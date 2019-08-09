@@ -3,8 +3,7 @@ const Trip = require('../models/trips.js')
 
 const router = express.Router()
 
-let trips = []
-let deletedTrips = []
+//need to go through the users array and find the user whos username matches up, then grab the trip property from that object
 
 //get add page
 router.get('/addtrip', (req,res) => {
@@ -21,15 +20,23 @@ router.post('/addtrip', (req, res) => {
     let tripId = currentTime.toString() + randomInt.toString()
     let tripInfo = new Trip(tripTitle, tripImgsrc, dateDepart, dateReturn)
     let trip = {tripId: tripId, tripInfo: tripInfo}
-    trips.push(trip)
+    let username = req.session.username
+    let userObj = users.find(user => {
+        return user.username == username
+    })
+    userObj.trips.push(trip)
     res.redirect('./')
 })
 
 //get view trips page
 router.get('/', (req,res) => {
+    let username = req.session.username
+    let userObj = users.find(user => {
+        return user.username == username
+    })
     let filteredTrips = []
-    trips.forEach((trip) => {
-        if(!deletedTrips.includes(trip.tripId))
+    userObj.trips.forEach((trip) => {
+        if(!userObj.deletedTrips.includes(trip.tripId))
         filteredTrips.push(trip)
     })
     res.render('viewTrips', {trips: filteredTrips})
@@ -37,8 +44,12 @@ router.get('/', (req,res) => {
 
 //delete trip
 router.post('/deletetrip', (req, res) => {
+    let username = req.session.username
+    let userObj = users.find(user => {
+        return user.username == username
+    })
     let tripId = req.body.tripId
-    deletedTrips.push(tripId)
+    userObj.deletedTrips.push(tripId)
     res.redirect('./')
 })
 

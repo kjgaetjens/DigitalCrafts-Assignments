@@ -15,9 +15,8 @@ HARDMODE:
 */
 
 
-//add a way to delete a trip
-//add a confirm page after add?
-//add a way to add another trip under view trips?
+
+global.users = []
 
 const express = require('express')
 const app = express()
@@ -34,7 +33,18 @@ app.use(session({
   }))
 app.use(express.static('public'))
 app.use(express.urlencoded())
-// app.all('/trip/*', authenticate)
+
+function authenticate(req, res, next) {
+    if (req.session) {
+        if (req.session.username) {
+            next()
+        } else {
+            res.redirect('/login')
+        }
+    }
+}
+
+app.use('/trip', authenticate)
 app.use('/trip', tripRouter)
 
 const VIEWS_PATH = path.join(__dirname, 'views')
@@ -45,9 +55,6 @@ app.engine('mustache',mustacheExpress(VIEWS_PATH + '/partials', '.mustache'))
 app.set('views',VIEWS_PATH)
 // extension will be .mustache
 app.set('view engine','mustache')
-
-
-let users = []
 
 
 
@@ -100,6 +107,18 @@ app.post('/signup', (req, res) => {
     }
 
     //build in some code to prevent duplicate usernames
+})
+
+app.get('/signout', (req, res) => {
+    if(req.session) {
+        req.session.destroy(error => {
+            if(error) {
+                next(error)
+            } else {
+                res.redirect('/login')
+            }
+        }) 
+    }
 })
 
 app.listen(3000, () => {
