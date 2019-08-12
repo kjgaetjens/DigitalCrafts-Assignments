@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {{> menu}}
+        <h1>Edit Blog Post</h1>
+        {{#posts}}
+            <form id="updateblogform" action="/blog/{{postid}}/updateblog/update" method="POST">
+                <label for="post-title">Title:</label>
+                <br/>
+                <input id="post-title" type="text" name="postTitle" value="{{title}}" required>
+                <br/>
+                <br/>
+                <label for="post-author">Author:</label>
+                <br/>
+                <input id="post-author" type="text" name="postAuthor" value="{{author}}" required>
+                <br/>
+                <br/>
+                <label for="postText">Blog Post:</label>
+                <br/>
+                <textarea id="post-text" rows="60" cols="100" name="postText">{{posttext}}</textarea>
+                <br/>
+                <input type="submit" value="Save">
+        </form>
+        {{/posts}}
+    </body>
+</html>
