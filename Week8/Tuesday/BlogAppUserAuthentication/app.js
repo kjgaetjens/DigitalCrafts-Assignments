@@ -28,6 +28,7 @@ const VIEWS_PATH = path.join(__dirname, 'views')
 const User = require('./models/users')
 const Post = require('./models/posts')
 const blogRouter = require('./routes/blogroute.js')
+const bcrypt = require('bcrypt')
 
 const pgp = require('pg-promise')()
 const connectionString = 'postgres://oqvrnous:eeZO88gm6FeD3a8zNaA51Ik28Gtuh_rY@raja.db.elephantsql.com:5432/oqvrnous'
@@ -62,43 +63,47 @@ app.get('/login', (req,res) => {
     res.render('login')
 })
 
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
     if (req.session) {
         let username = req.body.username
         let password = req.body.password
-        //change the below code to pull from the db and look more like azams code
-        let validatedUsername = users.find(user => {
-            return user.username == username && user.password == password
-        })
-        if (validatedUsername) {
-            req.session.username = username
-            app.locals.username = username
-            res.redirect('/blog')
+
+        let validatedUsername = await db.oneOrNone('SELECT userid, username, password FROM users WHERE username = $1', [username])
+        if(validatedUsername) {
+            let validatedPassword = await bcrypt.compare(password, validatedUsername.password)
+            if(validatedPassword) {
+                req.session.username = username
+                app.locals.username = username
+                res.redirect('/blog')
+            } else {
+                res.render('login', {alert: "Invalid username or password"})
+            }
         } else {
             res.render('login', {alert: "Invalid username or password"})
         }
-
-    }
+     }
 })
 
 app.get('/signup', (req,res) => {
     res.render('signup')
 })
 
-app.post('/signup', (req, res) => {
+app.post('/signup', async (req, res) => {
     let username = req.body.username
     let password = req.body.password
     //change the below code to pull from the db and look more like azams code
-    let existingUsername = users.find(user => {
-        return user.username == username
-    })
+
+    let existingUsername = await db.oneOrNone('Select username FROM users WHERE username = $1', [username])
+
     if (!existingUsername) {
-        //change to use db
-        let userObj = new User(123, username, password)
-        users.push(userObj)
+        let hash = await bcrypt.hash(password, 10)
+        let updatedpost = await db.none('INSERT INTO users(username, password) VALUES($1, $2)', [username, hash])
+        let useridObject = await db.one('Select userid FROM users WHERE username = $1', [username])
+        let userid = useridObject.userid
         if (req.session) {
-            req.session.username = username
-            app.locals.username = username
+            req.session.userid = userid
+            req.session.username = username //maybe delete
+            app.locals.username = username //maybe delete
             res.redirect('/blog')
         }
     } else {

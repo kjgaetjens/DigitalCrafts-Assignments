@@ -17,8 +17,11 @@ router.post('/addblog', async (req, res) => {
     let postTitle = req.body.postTitle
     let postAuthor = req.body.postAuthor
     let postText = req.body.postText
-    let updatedpost = await db.none('INSERT INTO posts(title, author, posttext) VALUES($1, $2, $3)', [postTitle, postAuthor, postText])
+    let userid = req.session.userid
+    let updatedpost = await db.none('INSERT INTO posts(title, author, posttext, userid) VALUES($1, $2, $3, $4)', [postTitle, postAuthor, postText, userid])
     res.redirect('/blog')
+    //need to add code in here that adds the user id as a foreign key
+
 })
 
 router.get('/:id/updateblog', async (req, res) => {
