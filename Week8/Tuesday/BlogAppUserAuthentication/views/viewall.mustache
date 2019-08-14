@@ -4,18 +4,18 @@
     </head>
     <body>
         {{> menu}}
-        <h1>My Posts</h1>
+        <h1>Blog Posts</h1>
         <div>
         {{#posts}}
             <h2>{{title}}<h2>
             <h3>Author: {{author}}<h3>
             <h4>Date Posted: {{dateposted}}<h4>
             <p>{{posttext}}</p>
-            <a href="/blog/{{postid}}/updateblog">Edit</a>
-            <br/>
-            <br/>
-            <form id="deleteblogform" action="/blog/{{postid}}/deleteblog/" method="POST">
-                <input type="submit" value="Delete">
+            <form id="commentform" action="/blog/{{postid}}/commentblog/" method="POST">
+                <textarea id="comment-text" rows="3" cols="50" name="commentText">
+                </textarea>
+                <br/>
+                <input type="submit" value="Comment">
             </form>
         {{/posts}}
         </div>

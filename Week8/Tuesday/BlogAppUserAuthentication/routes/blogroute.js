@@ -5,7 +5,8 @@ const router = express.Router()
 
 
 router.get('/', async (req, res) => {
-    let posts = await db.any('SELECT postid, title, author, dateposted, posttext FROM posts ORDER BY dateposted DESC')
+    let userid = req.session.userid
+    let posts = await db.any('SELECT postid, title, author, dateposted, posttext FROM posts WHERE userid = $1 ORDER BY dateposted DESC', [userid])
     res.render('blog', {posts: posts})
 })
 
@@ -20,8 +21,11 @@ router.post('/addblog', async (req, res) => {
     let userid = req.session.userid
     let updatedpost = await db.none('INSERT INTO posts(title, author, posttext, userid) VALUES($1, $2, $3, $4)', [postTitle, postAuthor, postText, userid])
     res.redirect('/blog')
-    //need to add code in here that adds the user id as a foreign key
+})
 
+router.get('/viewall', async (req, res) => {
+    let posts = await db.any('SELECT postid, title, author, dateposted, posttext FROM posts ORDER BY dateposted DESC')
+    res.render('viewall', {posts: posts})
 })
 
 router.get('/:id/updateblog', async (req, res) => {
@@ -44,6 +48,14 @@ router.post('/:id/deleteblog', async (req, res) => {
     let postId = req.params.id
     let deletepost = await db.none('DELETE FROM posts WHERE postid = $1', [postId])
     res.redirect('/blog')
+})
+
+router.post('/:id/commentblog/', async (req, res) => {
+    let postId = req.params.id
+    let commentor = req.session.username
+    let commentText = req.body.commentText
+    let commentedPost = await db.none('INSERT INTO comments(commenttext, commentor, postid) VALUES($1, $2, $3)', [commentText, commentor, postId])
+    res.redirect('/blog/viewall')
 })
 
 

@@ -72,6 +72,7 @@ app.post('/login', async (req, res) => {
         if(validatedUsername) {
             let validatedPassword = await bcrypt.compare(password, validatedUsername.password)
             if(validatedPassword) {
+                req.session.userid = validatedUsername.userid
                 req.session.username = username
                 app.locals.username = username
                 res.redirect('/blog')
