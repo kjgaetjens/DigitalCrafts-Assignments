@@ -45,6 +45,18 @@ router.post('/:id/updateblog/update', async (req, res) => {
     res.redirect('/blog')
 })
 
+router.get('/:id/blogdetails', async (req, res) => {
+    let postId = req.params.id
+    let postComments = await db.any('SELECT posts.postid, posts.title, posts.author, posts.dateposted as postdateposted, posts.posttext, commentid, comments.commentor, comments.dateposted as commentdateposted, comments.commenttext FROM posts LEFT OUTER JOIN comments ON posts.postid = comments.postid WHERE posts.postid = $1 ORDER BY commentdateposted ASC', [postId])
+    let postObject = new Post(postComments[0].title, postComments[0].author, postComments[0].posttext, postComments[0].postdateposted)
+    postComments.forEach(result => {
+        //create comment object and add
+        let comment = {commentor: result.commentor, dateposted: result.commentdateposted, commenttext: result.commenttext}
+        postObject.addComment(comment)
+    })
+    res.render('blogDetails', postObject)
+})
+
 router.post('/:id/deleteblog', async (req, res) => {
     let postId = req.params.id
     let deletepost = await db.none('DELETE FROM posts WHERE postid = $1', [postId])

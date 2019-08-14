@@ -1,9 +1,9 @@
 class Post {
-    constructor(postId = null, title, author, postText) {
-        this.postid = postId
+    constructor(title, author, postText, datePosted) {
         this.title = title
         this.author = author
         this.postText = postText
+        this.datePosted = datePosted
         this.comments = []
     }
     addComment(comment) {

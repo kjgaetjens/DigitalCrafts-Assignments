@@ -5,7 +5,7 @@ x- Allow the user to login to the website
 x- Allow the users to create posts 
 x- Allow the users to post comments 
 x- Create a page to show all posts from the database. Each post will also display the number of comments available for that post. 
-o- Create a post details page where you will display the details about the post and also the comments associated with the post. 
+x- Create a post details page where you will display the details about the post and also the comments associated with the post. 
 x- Add the ability to delete a post and comment 
 x- Host your database (ElephantSQL or any other service) 
 
