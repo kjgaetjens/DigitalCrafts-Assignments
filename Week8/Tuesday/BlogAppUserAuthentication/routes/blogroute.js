@@ -24,7 +24,8 @@ router.post('/addblog', async (req, res) => {
 })
 
 router.get('/viewall', async (req, res) => {
-    let posts = await db.any('SELECT postid, title, author, dateposted, posttext FROM posts ORDER BY dateposted DESC')
+    let posts = await db.any('SELECT posts.postid, posts.title, posts.author, posts.dateposted, posts.posttext, COUNT(comments.commentid) as commentcount FROM posts LEFT OUTER JOIN comments ON posts.postid = comments.postid GROUP BY posts.postid ORDER BY posts.dateposted DESC')
+    //account for cases with no comments
     res.render('viewall', {posts: posts})
 })
 

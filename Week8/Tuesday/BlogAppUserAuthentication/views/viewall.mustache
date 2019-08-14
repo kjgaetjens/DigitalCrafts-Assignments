@@ -11,6 +11,7 @@
             <h3>Author: {{author}}<h3>
             <h4>Date Posted: {{dateposted}}<h4>
             <p>{{posttext}}</p>
+            <p># of Comments: {{commentcount}}</p>
             <form id="commentform" action="/blog/{{postid}}/commentblog/" method="POST">
                 <textarea id="comment-text" rows="3" cols="50" name="commentText">
                 </textarea>
