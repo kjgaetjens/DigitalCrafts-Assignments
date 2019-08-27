@@ -1,8 +1,8 @@
 # DigitalCrafts Immersive Coding Bootcamp
 
 I am currently enrolled in [DigitalCrafts](https://www.digitalcrafts.com/immersive-web.html) full stack immersive coding bootcamp. This repository contains assignments for the course.
-  
-  
+
+
 ## Table of Contents
 #### [Week 1 Projects](#week-1)
 - Bash, Git, and Python. Covered arrays, conditionals, loops, dictionaries, modules, and algorithms in Python.
@@ -22,8 +22,7 @@ I am currently enrolled in [DigitalCrafts](https://www.digitalcrafts.com/immersi
 - PostgreSQL, Sequelize ORM, Bcrypt encryption, Heroku. Covered relational database modeling, creation, manipulation, and querying, ORM, field encryption, and deployment to Heroku.
 #### [Week 9 Projects](#week-9)
 - Full Stack Development Group Project
-  
-  
+
 &nbsp;
 ## Week 1
 
@@ -36,8 +35,7 @@ Various Python algorithms and assignments
 
 ***Technologies Used:***
 Python
-  
-  
+
 &nbsp;
 ## Week 2
 
