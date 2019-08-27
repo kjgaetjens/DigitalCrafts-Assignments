@@ -7,82 +7,87 @@ Currently enrolled in DigitalCrafts full stack immersive coding bootcamp. This r
 
 
 
-Week 1
-Introduction to Bash, Git, and Python. Covered arrays, conditionals, loops, dictionaries, modules, and algorithms in Python.
-    - Project 1: Various Python Applications
-
-Project 1: Various Python Applications
-https://github.com/kjgaetjens/DigitalCrafts-Assignments/tree/master/Week1
-**add summary
-
+Week 1  
+Introduction to Bash, Git, and Python. Covered arrays, conditionals, loops, dictionaries, modules, and algorithms in Python.  
+    - Project 1: Various Python Applications  
+  
+Project 1: Various Python Applications  
+https://github.com/kjgaetjens/DigitalCrafts-Assignments/tree/master/Week1  
+  
+Assignment:  
+Various Python algorithms and assignments  
+  
+Technologies Used:  
+Python  
+  
 ------
-
-Week 2
-Continuation of Python and unit testing. Covered inheritance in classes and writing text and JSON files.
-    - Project 1: Shopping List
-    - Project 2: Todo List with Files
-    - Project 3: Pool Table Management
-
-Project 1: Shopping List
-https://github.com/kjgaetjens/DigitalCrafts-Assignments/tree/master/Week2/Monday/ShoppingList
-
-Assignment: 
-You are responsible for creating an app that manages groceries. Your groceries are characterized by Shopping Lists which can contain grocery items. Here are the features you need to implement: 
-- You need to ask the user for the input. 
-- A user should be able to create a shopping list. A shopping list consists of a title and address. Example = Fiesta, Walmart, Sams Club, Cosco, Randalls etc 
-- A user should be able to add multiple shoppings lists 
-- Give user an option to display the list 
-- A user should be able to add a grocery items to a particular shopping list. A grocery item consists of a title, price, quantity. Example Milk, Cookies, Paper, Napkins, Soda, Chips etc 
-
-Technologies Used:
-Python
-
-Project 2: Todo List with Files
-https://github.com/kjgaetjens/DigitalCrafts-Assignments/tree/master/Week2/Tuesday/TodoListWithFiles
-
-Assignment:
-In this assignment you are going to create a TODO app which saves the list into a file. When the app starts it should present user with the following menu: 
-Press 1 to add task 
-Press 2 to delete task 
-Press 3 to view all tasks 
-Press q to quit 
-The user should only be allowed to quit when they press 'q'. 
-
-Add Task: 
-Ask the user for the 'title' and 'priority' of the task. Priority can be high, medium and low. 
-
-Delete Task: 
-Show user all the tasks along with the index number of each task. User can then enter the index number of the task to delete the task. 
-
-View all tasks
-Allow the user to view all the tasks in the following format: 
-1 - Wash the car - high 
-2 - Mow the lawn - low 
-
-Technologies Used:
-Python
-
-Project 3: Pool Table Management
-https://github.com/kjgaetjens/DigitalCrafts-Assignments/tree/master/Week2/Wednesday/PoolTableManagement
-
-Assignment:
-You have just been hired by University of Houston as a developer. Your first task is to create a pool table management app which will manage the pool tables in University Center Games Room. Here are the requested features: 
-- As an admin you should be able to see all the tables (12) 
-- As an admin each table in the list should show, whether the table is OCCUPIED or NOT OCCUPIED. 
-- As an admin if the table is OCCUPIED then show the start time of the table, number of minutes played. (Hardmode - If the minutes are > 60 then show them in terms of hours) 
-- As an admin you can only give out the tables that are NOT OCCUPIED. This means if pool table 8 is occupied and you try to give it out then the app will print a message saying "Pool Table 8 is currently occupied". 
-- As an admin whenever I close the table it should write an entry in the text file / json file. The file should be named in the following format: (11-22-2017.txt or 11-22-2017.json) keeping track of all the tables. The entry can consists of the following information: 
-    - Pool Table Number 
-    - Start Date Time
-    - End Date Time 
-    - Total Time Played 
-    - Cost (if you are doing the hard mode) 
-
-Technologies Used:
-Python, JSON
-
+  
+Week 2  
+Continuation of Python and unit testing. Covered inheritance in classes and writing text and JSON files.  
+    - Project 1: Shopping List  
+    - Project 2: Todo List with Files  
+    - Project 3: Pool Table Management  
+  
+Project 1: Shopping List  
+https://github.com/kjgaetjens/DigitalCrafts-Assignments/tree/master/Week2/Monday/ShoppingList  
+  
+Assignment:  
+You are responsible for creating an app that manages groceries. Your groceries are characterized by Shopping Lists which can contain grocery items. Here are the features you need to implement:  
+- You need to ask the user for the input.  
+- A user should be able to create a shopping list. A shopping list consists of a title and address. Example = Fiesta, Walmart, Sams Club, Cosco, Randalls etc  
+- A user should be able to add multiple shoppings lists  
+- Give user an option to display the list  
+- A user should be able to add a grocery items to a particular shopping list. A grocery item consists of a title, price, quantity. Example Milk, Cookies, Paper, Napkins, Soda, Chips etc  
+  
+Technologies Used:  
+Python  
+  
+Project 2: Todo List with Files  
+https://github.com/kjgaetjens/DigitalCrafts-Assignments/tree/master/Week2/Tuesday/TodoListWithFiles  
+  
+Assignment:  
+In this assignment you are going to create a TODO app which saves the list into a file. When the app starts it should present user with the following menu:  
+Press 1 to add task  
+Press 2 to delete task  
+Press 3 to view all tasks  
+Press q to quit  
+The user should only be allowed to quit when they press 'q'.  
+  
+Add Task:  
+Ask the user for the 'title' and 'priority' of the task. Priority can be high, medium and low.  
+  
+Delete Task:  
+Show user all the tasks along with the index number of each task. User can then enter the index number of the task to delete the task.  
+  
+View all tasks  
+Allow the user to view all the tasks in the following format:  
+1 - Wash the car - high  
+2 - Mow the lawn - low  
+  
+Technologies Used:  
+Python  
+  
+Project 3: Pool Table Management  
+https://github.com/kjgaetjens/DigitalCrafts-Assignments/tree/master/Week2/Wednesday/PoolTableManagement  
+  
+Assignment:  
+You have just been hired by University of Houston as a developer. Your first task is to create a pool table management app which will manage the pool tables in University Center Games Room. Here are the requested features:  
+- As an admin you should be able to see all the tables (12)  
+- As an admin each table in the list should show, whether the table is OCCUPIED or NOT OCCUPIED.  
+- As an admin if the table is OCCUPIED then show the start time of the table, number of minutes played. (Hardmode - If the minutes are > 60 then show them in terms of hours)  
+- As an admin you can only give out the tables that are NOT OCCUPIED. This means if pool table 8 is occupied and you try to give it out then the app will print a message saying "Pool Table 8 is currently occupied".  
+- As an admin whenever I close the table it should write an entry in the text file / json file. The file should be named in the following format: (11-22-2017.txt or 11-22-2017.json) keeping track of all the tables. The entry can consists of the following information:  
+    - Pool Table Number  
+    - Start Date Time  
+    - End Date Time  
+    - Total Time Played  
+    - Cost (if you are doing the hard mode)  
+  
+Technologies Used:  
+Python, JSON  
+  
 ------
-
+  
 Week 3
 HTML, CSS, Bootstrap, Sass Chrome Developer Tools. Covered basic structure, navigation, box model, positioning, responsive desing, media queries, flexbox, grid, and animations.
     - Project 1: 90s Style Website
