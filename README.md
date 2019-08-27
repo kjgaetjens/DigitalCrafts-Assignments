@@ -2,7 +2,7 @@
 
 I am currently enrolled in [DigitalCrafts](https://www.digitalcrafts.com/immersive-web.html) full stack immersive coding bootcamp. This repository contains assignments for the course.
 
-
+&nbsp;
 ## Table of Contents
 #### [Week 1 Projects](#week-1)
 - Bash, Git, and Python. Covered arrays, conditionals, loops, dictionaries, modules, and algorithms in Python.
@@ -96,6 +96,7 @@ You have just been hired by University of Houston as a developer. Your first tas
 ***Technologies Used:***
 Python, JSON
 
+&nbsp;
 ## Week 3
 
 HTML, CSS, Bootstrap, Sass Chrome Developer Tools. Covered basic structure, navigation, box model, positioning, responsive design, media queries, flexbox, grid, and animations.
@@ -122,11 +123,9 @@ HTML, CSS
 You have been contacted by the CEO of the knowledge based website, HighOnCoding. He wants you to redesign the website to the following screenshots. You should start your code from scratch for this assignment.
 * You don't have to match pixel by pixel to the screenshot below.
 
-![Image of Index]
-(https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image1.png)
+![Image of Index](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image1.png)
 
-![Image of Categories]
-(https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image2.png)
+![Image of Categories](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image2.png)
 
 ***Technologies Used:***
 HTML, CSS
@@ -139,11 +138,9 @@ In this assignment you are going to create a responsive Engadget website. Take a
 You can also watch the video of the final output:
 https://youtu.be/PxGgsGZp9UU
 
-![Image 1]
-(https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image3.png)
+![Image 1](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image3.png)
 
-![Image 2]
-(https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image4.png)
+![Image 2](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image4.png)
 
 ***Technologies Used:***
 HTML, CSS
@@ -155,17 +152,14 @@ The CEO of HighOnCoding just heard about the Bootstrap UI framework. He has cont
 
 Once again use your creativity to design the look and feel of the website.
 
-![Image of Index]
-(https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image1.png)
+![Image of Index](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image1.png)
 
-![Image of Categories]
-
-(https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image2.png)
+![Image of Categories](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image2.png)
 
 ***Technologies Used:***
 HTML, CSS, Bootstrap
 
-
+&nbsp;
 ## Week 4
 
 JavaScript and jQuery. Covered basic JavaScript, basic jQuery, DOM, template literals, array helpers, parsing objects, arrow functions, callback functions, window.setTimeout and window.setInterval, and forms and validation.
@@ -212,8 +206,7 @@ JavaScript
 ***Assignment:***
 Create a mobile responsive todo list.
 
-![Image of Mockup]
-(https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week4image1.png)
+![Image of Mockup](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week4image1.png)
 
 ***Technologies Used:***
 HTML, CSS, JavaScript
@@ -235,8 +228,7 @@ The page should also have an option to FILTER the dishes by course:
 Make sure the website is responsive on mobile devices.
 
 Example Layout Shown Below:
-![Image of Mockup]
-(https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week4image2.png)
+![Image of Mockup](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week4image2.png)
 
 ***Technologies Used:***
 HTML, CSS, JavaScript
@@ -268,12 +260,12 @@ HTML, CSS, JavaScript
 ***Assignment:***
 Create a mobile responsive todo list using jQuery.
 
-![Image of Mockup]
-(https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week4image3.png)
+![Image of Mockup](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week4image3.png)
 
 ***Technologies Used:***
 HTML, CSS, JavaScript, jQuery  
 
+&nbsp;
 ## Week 5
 
 Firebase, REST API, AJAX, promises, async and await.  
@@ -341,10 +333,12 @@ Create a grocery list app which allows you to add different categories as well a
 ***Technologies Used:***
 HTML, Javascript Firebase
 
+&nbsp;
 ## Week 6
 
 ### [Front End Development Group Project](https://github.com/ersnover/purple-map-app)
 
+&nbsp;
 ## Week 7
 
 Node.js, Express.js, Mustache, Socket.io. Covered basic Node.js, implementing GET, POST, and DELETE routes, route parameters, static resources, server side pages, form POST, custom modules, routers, and web sockets.
@@ -451,6 +445,7 @@ Your app should work on mobile devices
 ***Technologies Used:***
 HTML, CSS, JavaScript, Node.js, Express.js, Mustache, Socket.io
 
+&nbsp;
 ## Week 8
 
 PostgreSQL, Sequelize ORM, Bcrypt encryption, Heroku. Covered relational database modeling, creation, manipulation, and querying, ORM, field encryption, and deployment to Heroku.
@@ -492,6 +487,7 @@ This assignment was a 2 day project with a partner.
 ***Technologies Used:***
 HTML, CSS, JavaScript, Node.js, Express.js, Mustache, Cypher, Neo4j, Heroku
 
+&nbsp;
 ## Week 9
 
 ### [Full Stack Development Group Project](https://github.com/kjgaetjens/tickets)
