@@ -123,9 +123,8 @@ HTML, CSS
 You have been contacted by the CEO of the knowledge based website, HighOnCoding. He wants you to redesign the website to the following screenshots. You should start your code from scratch for this assignment.
 * You don't have to match pixel by pixel to the screenshot below.
 
-[https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image1.png|alt=index]
-
-![Image of Categories](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image2.png)
+![Index](images/week3img1.png)
+![Categories](images/week3image2.png)
 
 ***Technologies Used:***
 HTML, CSS
@@ -138,9 +137,8 @@ In this assignment you are going to create a responsive Engadget website. Take a
 You can also watch the video of the final output:
 https://youtu.be/PxGgsGZp9UU
 
-![Image 1](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image3.png)
-
-![Image 2](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image4.png)
+![Image 1](images/week3image3.png)
+![Image 2](images/week3image4.png)
 
 ***Technologies Used:***
 HTML, CSS
@@ -152,9 +150,8 @@ The CEO of HighOnCoding just heard about the Bootstrap UI framework. He has cont
 
 Once again use your creativity to design the look and feel of the website.
 
-![Image of Index](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image1.png)
-
-![Image of Categories](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image2.png)
+![Image of Index](images/week3image1.png)
+![Image of Categories](images/week3image2.png)
 
 ***Technologies Used:***
 HTML, CSS, Bootstrap
@@ -206,7 +203,7 @@ JavaScript
 ***Assignment:***
 Create a mobile responsive todo list.
 
-![Image of Mockup](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week4image1.png)
+![Image of Mockup](images/week4image1.png)
 
 ***Technologies Used:***
 HTML, CSS, JavaScript
@@ -228,7 +225,7 @@ The page should also have an option to FILTER the dishes by course:
 Make sure the website is responsive on mobile devices.
 
 Example Layout Shown Below:
-![Image of Mockup](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week4image2.png)
+![Image of Mockup](images/week4image2.png)
 
 ***Technologies Used:***
 HTML, CSS, JavaScript
@@ -260,7 +257,7 @@ HTML, CSS, JavaScript
 ***Assignment:***
 Create a mobile responsive todo list using jQuery.
 
-![Image of Mockup](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week4image3.png)
+![Image of Mockup](images/week4image3.png)
 
 ***Technologies Used:***
 HTML, CSS, JavaScript, jQuery  
