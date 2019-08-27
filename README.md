@@ -123,7 +123,7 @@ HTML, CSS
 You have been contacted by the CEO of the knowledge based website, HighOnCoding. He wants you to redesign the website to the following screenshots. You should start your code from scratch for this assignment.
 * You don't have to match pixel by pixel to the screenshot below.
 
-[[https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image1.png|alt=index]]
+[https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image1.png|alt=index]
 
 ![Image of Categories](https://github.com/kjgaetjens/DigitialCrafts-Assignments/tree/master/images/week3image2.png)
 
