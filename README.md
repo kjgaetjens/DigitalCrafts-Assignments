@@ -24,6 +24,7 @@ I am currently enrolled in [DigitalCrafts](https://www.digitalcrafts.com/immersi
 - Full Stack Development Group Project
   
   
+&nbsp;
 ## Week 1
 
 Bash, Git, and Python. Covered arrays, conditionals, loops, dictionaries, modules, and algorithms in Python.
@@ -37,6 +38,7 @@ Various Python algorithms and assignments
 Python
   
   
+&nbsp;
 ## Week 2
 
 Continuation of Python. Covered unit testing, inheritance in classes, and writing text and JSON files.
