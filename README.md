@@ -257,7 +257,7 @@ HTML, CSS, JavaScript
 ***Assignment:***
 Create a mobile responsive todo list using jQuery.
 
-![Image of Mockup](images/week4img3.png)
+![Image of Mockup](images/week4img3.jpeg)
 
 ***Technologies Used:***
 HTML, CSS, JavaScript, jQuery  
