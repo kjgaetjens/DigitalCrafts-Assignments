@@ -2,6 +2,7 @@
 
 I am currently enrolled in [DigitalCrafts](https://www.digitalcrafts.com/immersive-web.html) full stack immersive coding bootcamp. This repository contains assignments for the course.
 
+  
 ## Table of Contents
 #### [Week 1 Projects](#week-1)
 - Bash, Git, and Python. Covered arrays, conditionals, loops, dictionaries, modules, and algorithms in Python.
@@ -22,7 +23,7 @@ I am currently enrolled in [DigitalCrafts](https://www.digitalcrafts.com/immersi
 #### [Week 9 Projects](#week-9)
 - Full Stack Development Group Project
 
-
+  
 ## Week 1
 
 Bash, Git, and Python. Covered arrays, conditionals, loops, dictionaries, modules, and algorithms in Python.
@@ -35,7 +36,7 @@ Various Python algorithms and assignments
 ***Technologies Used:***
 Python
 
-
+  
 ## Week 2
 
 Continuation of Python. Covered unit testing, inheritance in classes, and writing text and JSON files.
