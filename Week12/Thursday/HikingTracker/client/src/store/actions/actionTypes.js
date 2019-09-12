@@ -1,0 +1,1 @@
+export const VIEW_LOC = 'VIEW_LOC'
