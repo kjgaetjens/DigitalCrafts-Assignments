@@ -13,8 +13,8 @@ ReactDOM.render(
         <BaseLayout>
             <Switch>
                 <Route path='/' exact component={App} />
-                <Route path='/books' component={View} />
-                <Route path='/add-book' component={Add} />
+                <Route path='/books/view' component={View} />
+                <Route path='/books/add-book' component={Add} />
             </Switch>
         </BaseLayout>
     </BrowserRouter>

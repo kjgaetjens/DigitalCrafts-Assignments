@@ -1,22 +1,19 @@
-import React,{Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 
-export class View extends Component {
+export function View() {
 
-  constructor() {
-    super()
+  const [bookList, setBookList] = useState({books: []})
+  const [genreList, setGenreList] = useState({genres: []})
+  const [selectedGenre, setSelectedGenre] = useState({selectedGenre: 'View All'})
 
-    this.state = {
-      books: [],
-      genres: [],
-      selectedGenre: 'View All'
-    }
+  //might need to update this
+  useEffect(() => {
+    viewBook();
+  },[])
 
-    this.viewBook()
-  }
-
-  viewBook = async () => {
-      let result = await fetch('http://localhost:5000/', {
+  const viewBook = async () => {
+      let result = await fetch('http://localhost:5000/books/view', {
           method: 'GET',
           headers: {
           'Content-Type': 'application/json'
@@ -26,49 +23,50 @@ export class View extends Component {
 
       let genreList = [...new Set(jsonObj.map(x => x.genre))]
 
-      this.setState({
-          books: jsonObj,
-          genres: genreList
+      setBookList({
+          books: jsonObj
       }) 
-  }
-
-  updateFilterSelected = (event) => {
-    console.log(event.target.value)
-    this.setState({
-      selectedGenre: event.target.value
-    })
-  }
-
-  render() {
-    let filteredBooks = this.state.books
-    if (this.state.selectedGenre !== 'View All') {
-      filteredBooks = this.state.books.filter(book => {
-        return book.genre === this.state.selectedGenre
+      setGenreList({
+        genres: genreList
       })
-    }
-    let filteredBooksOptions = this.state.genres.map(genre => {
-      return <option value={genre}>{genre}</option>
-    })
-
-    let bookItems = filteredBooks.map(book => {
-        return (
-          <div>
-            <h2>{book.title}</h2>
-            <h3>{book.genre}</h3>
-            <h3>{book.publisher}</h3>
-          </div>
-        )
-    })
-    //add a ddl with an on change function that updates the state above?
-    return <div>
-        <h1>View Books</h1>
-        <h2>Sort by Genre</h2>
-        <select onChange={this.updateFilterSelected} value={this.state.selectedGenre}>
-          <option value="View All">View All</option>
-          {filteredBooksOptions}
-        </select>
-        
-        <div>{bookItems}</div>
-    </div>
   }
+
+  const updateFilterSelected = (e) => {
+    setSelectedGenre({
+      selectedGenre: e.target.value
+    });
+  }
+
+  return (
+  <div>
+      <h1>View Books</h1>
+      <h2>Sort by Genre</h2>
+      <select onChange={(e) => updateFilterSelected(e)} value={selectedGenre.selectedGenre}>
+        <option value="View All">View All</option>
+        {genreList.genres.map(genre => {
+          return <option value={genre}>{genre}</option>
+          })}
+      </select>
+      
+      <div>
+      {  bookList.books.filter(book => {
+          if (selectedGenre.selectedGenre === 'View All') {
+            return book
+          } else {
+            return book.genre === selectedGenre.selectedGenre
+          }
+        }).map(book => {
+          return (
+                <div>
+                  <h2>{book.title}</h2>
+                  <h3>{book.genre}</h3>
+                  <h3>{book.publisher}</h3>
+                </div>
+              )
+        })}
+      </div>
+  </div>
+  )
 }
+
+

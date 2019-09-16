@@ -1,32 +1,26 @@
-import React,{Component} from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom'
 
-export class Menu extends Component {
-    render() {
-        return <ul>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/books">View Books</NavLink></li>
-            <li><NavLink to="/add-book">Add Books</NavLink></li>
-        </ul>
-    }
+export function Menu() {
+    return <ul>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/books/view">View Books</NavLink></li>
+        <li><NavLink to="/books/add-book">Add Books</NavLink></li>
+    </ul>
 }
 
-export class Footer extends Component {
-    render() {
-        return <div>Footer</div>
-    }
+export function Footer() {
+    return <div>Footer</div>
 }
 
-export class BaseLayout extends Component {
+export function BaseLayout(props) {
 
-    render() {
-        return (
-            <div>
-                <Menu />
-                {this.props.children}
-                <Footer />
-            </div>
-        ) 
-    }
+    return (
+        <div>
+            <Menu />
+            {props.children}
+            <Footer />
+        </div>
+    ) 
 
 }

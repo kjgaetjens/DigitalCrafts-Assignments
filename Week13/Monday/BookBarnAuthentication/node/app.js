@@ -2,17 +2,27 @@ const express = require('express')
 const app = express();
 const PORT = 5000
 global.models = require('./models')
+var jwt = require('jsonwebtoken');
 const cors = require('cors')
-app.use(express.json())
-app.use(cors())
 
-app.get('/', (req,res)=>{
+const users = [{username: 'test1', password: 'test123'}]
+
+app.use(cors())
+app.use(express.json())
+
+
+
+//add middleware for relevant routes; may need to rearrange some routes
+
+
+
+app.get('/books/view', (req,res)=>{
     models.Book.findAll({
     }).then(books => res.json(books)
     )
 })
 
-app.post('/add-book', (req,res)=>{
+app.post('/books/add-book', (req,res)=>{
     let title = req.body.title
     let genre = req.body.genre
     let publisher = req.body.publisher
@@ -29,7 +39,7 @@ app.post('/add-book', (req,res)=>{
     res.redirect('/')
 })
 
-app.post('/delete-books/:bookid', (req,res)=>{
+app.post('books/delete-books/:bookid', (req,res)=>{
     let bookid = req.params.bookid
     models.Book.destroy({
         where: {
