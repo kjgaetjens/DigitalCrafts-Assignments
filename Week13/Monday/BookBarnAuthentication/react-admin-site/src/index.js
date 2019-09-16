@@ -6,13 +6,19 @@ import * as serviceWorker from './serviceWorker';
 import {BaseLayout} from './BaseLayout'
 import {Add} from './Add'
 import {View} from './View'
+import Login from './Login'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import { setAuthenticationHeader } from './authenticate'
+
+let token = localStorage.getItem('jsonwebtoken')
+setAuthenticationHeader(token)
 
 ReactDOM.render(
     <BrowserRouter>
         <BaseLayout>
             <Switch>
                 <Route path='/' exact component={App} />
+                <Route path='/login' component={Login} />
                 <Route path='/books/view' component={View} />
                 <Route path='/books/add-book' component={Add} />
             </Switch>

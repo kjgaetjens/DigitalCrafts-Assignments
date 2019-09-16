@@ -4,17 +4,28 @@ const PORT = 5000
 global.models = require('./models')
 var jwt = require('jsonwebtoken');
 const cors = require('cors')
+const authenticate = require('./authentication')
 
 const users = [{username: 'test1', password: 'test123'}]
 
 app.use(cors())
 app.use(express.json())
+app.all('/books/*', authenticate)
 
 
+app.post('/login', (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
 
-//add middleware for relevant routes; may need to rearrange some routes
+    let persistedUser = users.find(user => user.username == username && user.password == password)
 
-
+    if (persistedUser) {
+        var token = jwt.sign({username:username}, 'mffie');
+        res.json({token:token})
+    } else {
+        res.status(401).json({error: 'Invalid credentials'})
+    }
+})
 
 app.get('/books/view', (req,res)=>{
     models.Book.findAll({
