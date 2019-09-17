@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios'
 import './App.css';
 
 export function View() {
@@ -13,13 +14,10 @@ export function View() {
   },[])
 
   const viewBook = async () => {
-      let result = await fetch('http://localhost:5000/books/view', {
-          method: 'GET',
-          headers: {
-          'Content-Type': 'application/json'
-          },
-      })
-      let jsonObj = await result.json()
+
+      let response = await axios.get('http://localhost:5000/books/view')
+
+      let jsonObj = response.data
 
       let genreList = [...new Set(jsonObj.map(x => x.genre))]
 

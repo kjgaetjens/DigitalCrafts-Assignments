@@ -1,4 +1,5 @@
 import React,{Component, useState} from 'react';
+import axios from 'axios';
 
 
 export function Add() {
@@ -13,13 +14,7 @@ export function Add() {
 
   const addBook = (e) => {
     let bookObj = {title: newBook.title, genre: newBook.genre, publisher: newBook.publisher, year: newBook.year, imgurl: newBook.imgurl}
-    fetch('http://localhost:5000/books/add-book', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(bookObj)
-    })
+    axios.post('http://localhost:5000/books/add-book', bookObj)
   }
 
 
