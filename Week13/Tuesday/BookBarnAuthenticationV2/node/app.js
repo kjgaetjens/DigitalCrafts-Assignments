@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express();
-const PORT = 5000
+require('dotenv').config()
 global.models = require('./models')
 var jwt = require('jsonwebtoken');
 const cors = require('cors')
@@ -20,7 +20,7 @@ app.post('/login', (req, res) => {
     let persistedUser = users.find(user => user.username == username && user.password == password)
 
     if (persistedUser) {
-        var token = jwt.sign({username:username}, 'mffie');
+        var token = jwt.sign({username:username}, JWT_SECRET_KEY);
         res.json({token:token})
     } else {
         res.status(401).json({error: 'Invalid credentials'})
