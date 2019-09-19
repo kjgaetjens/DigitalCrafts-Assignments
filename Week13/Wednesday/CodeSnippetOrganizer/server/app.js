@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 var mongoose = require('mongoose')
 const Snippet = require('./models/snippet')
 
+app.use(cors())
 app.use(express.json())
 
 mongoose.connect('mongodb://localhost/snippetdb', {useNewUrlParser: true}, (error) => {
@@ -84,6 +86,6 @@ app.delete('/delete-snippet', (req, res) => {
 
 
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("Server is running...")
 })
