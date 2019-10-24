@@ -22,6 +22,12 @@ I am currently enrolled in [DigitalCrafts](https://www.digitalcrafts.com/immersi
 - PostgreSQL, Sequelize ORM, Bcrypt encryption, Heroku. Covered relational database modeling, creation, manipulation, and querying, ORM, field encryption, and deployment to Heroku.
 #### [Week 9 Projects](#week-9)
 - Full Stack Development Group Project
+#### [Week 11 Projects](#week-11)
+- React.js
+#### [Week 12 Projects](#week-12)
+- React.js, Redux
+#### [Week 13 Projects](#week-13)
+- React.js, Redux
 
 &nbsp;
 ## Week 1
