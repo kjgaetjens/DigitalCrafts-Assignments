@@ -494,3 +494,19 @@ HTML, CSS, JavaScript, Node.js, Express.js, Mustache, Cypher, Neo4j, Heroku
 ## Week 9
 
 ### [Full Stack Development Group Project](https://github.com/kjgaetjens/tickets)
+
+&nbsp;
+## Week 11
+
+### placeholder
+
+&nbsp;
+## Week 12
+
+### placeholder
+
+&nbsp;
+## Week 13
+
+### placeholder
+
