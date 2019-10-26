@@ -1,6 +1,6 @@
 # DigitalCrafts Immersive Coding Bootcamp
 
-I am currently enrolled in [DigitalCrafts](https://www.digitalcrafts.com/immersive-web.html) full stack immersive coding bootcamp. This repository contains assignments for the course.
+I recently completed [DigitalCrafts](https://www.digitalcrafts.com/immersive-web.html) full stack immersive coding bootcamp. This repository contains assignments for the course.
 
 &nbsp;
 ## Table of Contents
